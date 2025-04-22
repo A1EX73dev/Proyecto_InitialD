@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>INITIAL D INFO WEB</title>
+        <link rel="icon" type="image/png" href="../static/img/initial-d-vector-logo.png">
+        <link rel="stylesheet" href="../static/estilo/estilo.css">    
+    </head>
+<body class="bodycoches">
+
+<!-- BARRA DE NAVEGACIÓN -->
+    <header>
+
+        <nav>
+
+            <a href="../index.html"><img src="../static/img/Initial_D_logo.png" alt="Initial D logo"></a>
+            <ul>
+                <li><a href="./info.html">¿QUE ES?</a></li>
+                <li><a href="./coches.html">COCHES</a></li>
+                <li><a href="./pilotos.html">PILOTOS</a></li>
+                <li><a href="./pistas.html">TRAMOS</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+<!-- BOTÓN FILTRAR + MENÚ DE FILTROS (MODAL) -->
+
+    <div class="div2">
+
+        <button id="abrirfiltro">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffcc00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                <path d="M3 6h18M7 10h10M5 14h14M9 18h6"></path>
+            </svg>                
+            Filtrar
+
+        </button>
+
+<!-- OVERLAY PARA EL FONDO OSCURO -->
+        <div id="overlay" class="overlay"></div>
+        
+<!-- MENÚ DE FILTROS (MODAL) -->
+        <div id="modalFiltro" class="modal-filtro">
+
+            <div class="modal-header">
+
+                <h2>FILTROS</h2>
+                <button class="close-btn" id="cerrarfiltro">&times;</button>
+
+            </div>
+            
+            <div class="filter-section">
+<!-- FILTRO : MARCAS -->
+                <h3>Marca</h3>
+
+                <div class="filter-options">
+
+                    <div class="filter-option">
+
+                        <input type="checkbox" id="toyota" name="marca" value="TOYOTA">
+                        <label for="toyota">TOYOTA</label>
+
+                    </div>
+
+                    <div class="filter-option">
+
+                        <input type="checkbox" id="nissan" name="marca" value="NISSAN">
+                        <label for="nissan">NISSAN</label>
+
+                    </div>
+
+                    <div class="filter-option">
+
+                        <input type="checkbox" id="honda" name="marca" value="HONDA">
+                        <label for="honda">HONDA</label>
+
+                    </div>
+
+                    <div class="filter-option">
+
+                        <input type="checkbox" id="mazda" name="marca" value="MAZDA">
+                        <label for="mazda">MAZDA</label>
+
+                    </div>
+
+                    <div class="filter-option">
+
+                        <input type="checkbox" id="suzuki" name="marca" value="SUZUKI">
+                        <label for="suzuki">SUZUKI</label>
+
+                    </div>
+
+                    <div class="filter-option">
+
+                        <input type="checkbox" id="mitsubishi" name="marca" value="MITSUBISHI">
+                        <label for="mitsubishi">MITSUBISHI</label>
+
+                    </div>
+
+                    <div class="filter-option">
+
+                        <input type="checkbox" id="subaru" name="marca" value="SUBARU">
+                        <label for="subaru">SUBARU</label>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+            
+
+            <div class="filter-section">
+<!-- FILTRO : EQUIPOS -->
+                <h3>Equipo</h3>
+
+                <div class="filter-options">
+
+                    <div class="filter-option">
+
+                        <input type="checkbox" id="hakone" name="equipo" value="Hakone Thunder Soldiers">
+                        <label for="hakone">Hakone Thunder Soldiers</label>
+
+                    </div>
+
+                    <div class="filter-option">
+
+                        <input type="checkbox" id="akina" name="equipo" value="Akina SpeedStars">
+                        <label for="akina">Akina SpeedStars</label>
+
+                    </div>
+
+                    <div class="filter-option">
+
+                        <input type="checkbox" id="akagi" name="equipo" value="Akagi RedSuns">
+                        <label for="akagi">Akagi RedSuns</label>
+
+                    </div>
+
+                    <div class="filter-option">
+
+                        <input type="checkbox" id="project-d" name="equipo" value="Project D">
+                        <label for="project-d">Project D</label>
+
+                    </div>
+
+                    <div class="filter-option">
+
+                        <input type="checkbox" id="impact-blue" name="equipo" value="Impact Blue">
+                        <label for="impact-blue">Impact Blue</label>
+
+                    </div>
+
+                    <div class="filter-option">
+                        <input type="checkbox" id="night-kids" name="equipo" value="NightKids">
+                        <label for="night-kids">NightKids</label>
+
+                    </div>
+
+                    <div class="filter-option">
+                        <input type="checkbox" id="emperor" name="equipo" value="Team Emperor">
+                        <label for="emperor">Team Emperor</label>
+
+                    </div>
+
+                    <div class="filter-option">
+                        <input type="checkbox" id="seven-star" name="equipo" value="Seven Star Leaf">
+                        <label for="seven-star">Seven Star Leaf</label>
+
+                    </div>
+
+                    <div class="filter-option">
+                        <input type="checkbox" id="todo-school" name="equipo" value="Todo School">
+                        <label for="todo-school">Todo School</label>
+
+                    </div>
+
+                    <div class="filter-option">
+                        <input type="checkbox" id="alianza" name="equipo" value="Alianza del Norte de Saitama">
+                        <label for="alianza">Alianza del Norte de Saitama</label>
+
+                    </div>
+
+                    <div class="filter-option">
+                        <input type="checkbox" id="tsuchisaka" name="equipo" value="Tsuchisaka Lancer Evolution Team">
+                        <label for="tsuchisaka">Tsuchisaka Lancer Evo Team</label>
+
+                    </div>
+
+                    <div class="filter-option">
+                        <input type="checkbox" id="purple-shadow" name="equipo" value="Purple Shadow">
+                        <label for="purple-shadow">Purple Shadow</label>
+
+                    </div>
+
+                    <div class="filter-option">
+                        <input type="checkbox" id="sidewinder" name="equipo" value="Sidewinder">
+                        <label for="sidewinder">Sidewinder</label>
+
+                    </div>
+
+                    <div class="filter-option">
+                        <input type="checkbox" id="katagiri" name="equipo" value="Katagiri">
+                        <label for="katagiri">Katagiri</label>
+
+                    </div>
+
+                    <div class="filter-option">
+                        <input type="checkbox" id="team-spiral" name="equipo" value="Team Spiral">
+                        <label for="team-spiral">Team Spiral</label>
+
+                    </div>
+
+                    <div class="filter-option">
+                        <input type="checkbox" id="team-246" name="equipo" value="Team 246">
+                        <label for="team-246">Team 246</label>
+
+                    </div>
+
+                    <div class="filter-option">
+                        <input type="checkbox" id="sin-equipo" name="equipo" value="No participa en ningún equipo.">
+                        <label for="sin-equipo">Sin Equipo</label>
+
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <div class="filter-section">
+<!-- FILTRO : TRACCIÓN -->
+                <h3>Tracción</h3>
+
+                <div class="filter-options">
+
+                    <div class="filter-option">
+
+                        <input type="checkbox" id="rwd" name="traccion" value="RWD">
+                        <label for="rwd">RWD (Tracción Trasera)</label>
+
+                    </div>
+
+                    <div class="filter-option">
+
+                        <input type="checkbox" id="fwd" name="traccion" value="FWD">
+                        <label for="fwd">FWD (Tracción Delantera)</label>
+
+                    </div>
+
+                    <div class="filter-option">
+
+                        <input type="checkbox" id="awd" name="traccion" value="AWD">
+                        <label for="awd">AWD (Tracción Total)</label>
+
+                    </div>
+
+                    <div class="filter-option">
+
+                        <input type="checkbox" id="4wd" name="traccion" value="4WD">
+                        <label for="4wd">4WD (Tracción Total)</label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+            <div class="filter-actions">
+
+                <button class="reset-btn" id="resetFiltros">Resetear</button>
+                <button class="filter-btn" id="aplicarFiltros">Aplicar</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+<!-- LISTADO DE COCHES + INFORMACIÓN DEL COCHE (MODAL) -->
+
+    <div class="div3">
+
+        <div id="lista-coches" class="contenedor-coches">
+
+            <!-- ESPACIO PARA LISTAR LOS COCHES -->
+
+        </div>
+
+<!-- INFORMACIÓN DEL COCHE (MODAL) -->
+
+        <div id="vehicleModal" class="vehicle-modal">
+
+            <div class="modal-content">
+
+                <span class="close-button" onclick="closeModal()">&times;</span>
+                
+                <div class="vehicle-header">
+
+                    <div class="vehicle-title">
+
+                        <h2 id="modalTitle">Nissan Fairlady Z Version S (350Z)</h2>
+                        <div class="vehicle-subtitle" id="modalSubtitle">Piloto: Ryuji Ikeda</div>
+
+                    </div>
+
+                </div>
+                
+                <div class="vehicle-content">
+
+                    <div class="vehicle-image-container">
+
+                        <img id="mainImage" class="main-image" src="https://static.wikia.nocookie.net/initiald/images/f/fc/350Z_Burning_Red_AS0.png" alt="Vehículo">
+
+                    </div>
+                    
+                    <div class="vehicle-info">
+
+                        <div class="specs">
+
+                            <h3>Especificaciones</h3>
+
+                            <div class="spec-item">
+
+                                <span class="spec-name">Marca:</span>
+                                <span class="spec-value" id="marca">Nissan</span>
+
+                            </div>
+
+                            <div class="spec-item">
+
+                                <span class="spec-name">Modelo:</span>
+                                <span class="spec-value" id="modelo">Fairlady Z Version S (350Z)</span>
+
+                            </div>
+
+                            <div class="spec-item">
+
+                                <span class="spec-name">Piloto:</span>
+                                <span class="spec-value" id="piloto">Ryuji Ikeda</span>
+
+                            </div>
+
+                            <div class="spec-item">
+
+                                <span class="spec-name">Tracción:</span>
+                                <span class="spec-value" id="traccion">RWD</span>
+
+                            </div>
+
+                            <div class="spec-item">
+
+                                <span class="spec-name">Equipo:</span>
+                                <div class="team-tags" id="equipoTags">
+
+                                    <span class="team-tag">Team Spiral</span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        
+                        <div class="description">
+
+                            <h3>Descripción</h3>
+
+                            <p id="description">El Nissan Fairlady Z Version S (350Z) es una de las versiones más deportivas y refinadas del 350Z, un coche que se convirtió rápidamente en un ícono de los deportivos japoneses. Equipado con un motor VQ35DE de 3.5 litros V6, produce 280 CV en su versión estándar, lo que le otorga una excelente aceleración y un sonido distintivo del motor V6. La versión Version S se destaca por su enfoque en el rendimiento, con una suspensión deportiva más firme, frenos de mayor rendimiento y detalles estéticos que le dan un aspecto más agresivo.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        
+    </div>
+
+<!-- FOOTER -->
+    <footer class="footercoches">
+
+        <p>&copy; 2025 Initial D info web  -  Alex Romero</p>
+
+    </footer>
+
+<!-- SCRIPT JS -->
+    <script src="../js/cohes.js"></script>
+</body>
+</html>

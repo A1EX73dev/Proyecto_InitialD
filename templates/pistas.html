@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>INITIAL D INFO WEB</title>
+        <link rel="icon" type="image/png" href="../static/img/initial-d-vector-logo.png">
+        <link rel="stylesheet" href="../static/estilo/estilo.css">    
+    </head>
+<body class="bodycoches">
+
+<!-- BARRA DE NAVEGACIÓN -->
+    <header>
+
+        <nav>
+
+            <a href="../index.html"><img src="../static/img/Initial_D_logo.png" alt="Initial D logo"></a>
+            <ul>
+                <li><a href="./info.html">¿QUE ES?</a></li>
+                <li><a href="./coches.html">COCHES</a></li>
+                <li><a href="./pilotos.html">PILOTOS</a></li>
+                <li><a href="./pistas.html">TRAMOS</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+<!-- LISTADO DE TRAMOS + INFORMACIÓN DEL TRAMO (MODAL) -->
+<div class="contenedor-principal">
+    <div class="div3-tramo">
+
+        <div id="lista-tramos" class="contenedor-tramos">
+
+            <!-- ESPACIO PARA LISTAR LOS TRAMOS -->
+
+        </div>
+
+<!-- INFORMACIÓN DEL TRAMO (MODAL) -->
+
+        <div id="tramoModal" class="tramo-modal">
+
+            <div class="modal-content">
+
+                <span class="close-button" onclick="closeModal()">&times;</span>
+                
+                <div class="tramo-header">
+
+                    <div class="tramo-title">
+
+                        <h2 id="modalTitle">Monte Akina</h2>
+                        <div class="vehicle-subtitle" id="modalSubtitle">秋名山</div>
+
+                    </div>
+
+                </div>
+                
+                <div class="tramo-content">
+
+                    <div class="tramo-image-container">
+
+                        <img id="mainImage" class="main-image" src="https://raw.github.com/A1EXS95/initiald-api-img/main/img/akina.png" alt="tramo">
+
+                        <div id="youtubeContainer">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/5x3AI4RJgzs?si=RtsW78tspGGQZd5r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                   
+                    
+                    <div class="tramo-info">
+
+                        <div class="specs">
+
+                            <h3>Características</h3>
+
+                            <div class="spec-item">
+
+                                <span class="spec-name">Nombre:</span>
+                                <span class="spec-value" id="nombre">Monte Akina</span>
+
+                            </div>
+
+                            <div class="spec-item">
+
+                                <span class="spec-name">Nombre Original:</span>
+                                <span class="spec-value" id="nombre_japones">秋名山</span>
+
+                            </div>
+
+                            <div class="spec-item">
+
+                                <span class="spec-name">Longitud:</span>
+                                <span class="spec-value" id="longitud">8.0 km</span>
+
+                            </div>
+
+                            <div class="spec-item">
+
+                                <span class="spec-name">Puntos Clave:</span>
+                                <span class="spec-value" id="puntos_clave">5 horquillas consecutivas, cunetas, rectas largas, terraplenes pronunciados, abundantes oportunidades de adelantamiento</span>
+
+                            </div>
+
+                            <div class="spec-item">
+
+                                <span class="spec-name">Equipo Local:</span>
+                                <span class="spec-value" id="traccion">Akina SpeedStars</span>
+
+                            </div>
+
+                            <div class="spec-item">
+
+                                <span class="spec-name">Prefectura:</span>
+                                <div class="team-tags" id="prefecturaTags">
+
+                                    <span class="prefectura-tag">Gunma</span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        
+                        <div class="description">
+
+                            <h3>Descripción</h3>
+
+                            <p id="description">Akina, enclavada en Gunma, es una pista venerada que atrae a pilotos de todo el mundo. Con sus características curvas cerradas, cambios de elevación y vistas impresionantes, personifica la esencia de las carreras de paso de montaña. Con 8 kilómetros de longitud, esta icónica pista combina caucho y asfalto, enmarcada por imponentes montañas. Su legado y sus batallas han convertido a Akina en un circuito sagrado. Ya sea buscando la adrenalina de dominar sus curvas o simplemente disfrutando de su encanto, Akina ofrece una experiencia de touge inolvidable donde las leyendas prosperan y la velocidad habla por sí sola.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+        
+    </div>
+
+    <!-- MAPA JAPÓN -->
+    
+    <div class="imagen-derecha" id="mapa">
+
+        <img src="../static/img/mapa.png" alt="Mapa acción de Initial D" usemap="#mapainitiald">
+
+    </div>
+    <map name="mapainitiald">
+        <area onclick="filtrarTramos('gunma'); resaltargunma()" target="" alt="GUNMA" title="GUNMA"  coords="125,35,118,50,107,52,109,69,102,71,104,82,92,87,89,92,85,98,75,97,70,102,61,106,52,109,46,114,49,120,39,122,34,130,33,137,31,144,30,155,30,165,37,167,40,173,46,169,56,167,63,169,63,194,57,197,60,211,61,218,54,221,57,227,63,228,63,235,63,243,62,250,69,253,72,259,80,247,87,249,92,240,99,236,106,234,111,228,118,228,120,215,125,206,129,198,136,199,143,203,150,204,156,206,163,204,168,209,174,216,183,215,193,212,197,216,202,211,198,199,189,201,183,196,175,196,169,188,162,179,163,168,169,158,169,149,171,139,177,136,175,129,165,128,157,124,156,116,159,107,160,98,162,89,166,82,159,79,162,64,139,55,131,46" shape="poly">
+        <area onclick="filtrarTramos('tochigi'); resaltartochigi()" target="" alt="TOCHIGI" title="TOCHIGI"  coords="165,65,172,61,176,54,184,52,193,44,201,39,211,33,220,28,225,19,233,17,244,16,254,18,261,23,270,30,282,41,282,58,284,77,285,86,283,96,289,105,285,110,278,112,282,124,282,150,276,161,274,172,267,170,262,175,256,171,255,177,248,179,237,186,237,192,228,191,225,203,219,208,210,213,202,209,197,198,189,200,177,199,169,191,161,178,171,158,172,144,179,136,176,128,158,124,158,113,162,101,165,88,168,80,161,78" shape="poly">
+        <area onclick="filtrarTramos('ibaraki'); resaltaribaraki()" target="" alt="IBARAKI" title="IBARAKI"  coords="328,58,330,73,321,79,312,89,305,83,299,72,285,60,285,74,287,85,284,93,290,104,286,109,279,111,284,125,283,141,280,156,276,168,270,172,263,175,253,178,240,185,235,194,229,192,226,205,214,214,208,215,210,228,213,235,219,232,223,239,228,247,235,258,241,259,241,266,249,272,258,277,264,279,269,286,278,283,287,280,293,281,298,274,312,270,317,274,326,275,333,281,342,285,347,292,352,300,366,310,345,270,334,231,329,190,336,173,337,147,344,119,348,97,357,75,341,68" shape="poly">
+        <area onclick="filtrarTramos('saitama'); resaltarsaitama()" target="" alt="SAITAMA" title="SAITAMA"  coords="73,260,79,248,88,248,96,238,105,235,117,228,130,199,144,206,159,205,172,216,193,214,199,215,204,212,205,221,208,232,212,238,220,245,222,256,228,269,233,281,232,295,222,292,214,292,203,294,195,297,189,302,183,296,178,301,166,302,157,295,152,288,143,288,132,283,121,281,114,275,104,281,100,284,94,288,83,282,74,274" shape="poly">
+        <area onclick="filtrarTramos('tokyo'); resaltartokyo()" target="" alt="TOKYO" title="TOKYO"  coords="105,285,114,278,119,283,130,286,140,290,150,291,156,298,161,302,166,305,183,301,197,304,204,299,216,299,222,295,231,299,240,321,234,330,222,328,215,338,215,349,208,351,203,340,185,330,177,335,178,342,176,358,166,341,149,337,140,332,131,324,121,317,111,310" shape="poly">
+        <area onclick="filtrarTramos('chiba'); resaltarchiba()" target="" alt="CHIBA" title="CHIBA"  coords="219,237,232,258,240,268,257,280,269,287,285,284,300,277,314,274,327,277,340,286,353,303,367,314,348,317,336,323,320,338,309,359,303,381,303,412,292,431,276,440,255,453,247,462,243,471,237,481,224,481,213,470,228,463,221,453,226,436,222,421,231,415,227,403,217,399,228,385,238,372,254,352,267,338,259,333,258,321,247,317,240,318,232,299,235,283,224,256" shape="poly">
+        <area onclick="filtrarTramos('kanagawa'); resaltarkanagawa()" target="" alt="KANAGAWA" title="KANAGAWA"  coords="129,324,129,345,123,357,111,365,100,378,111,380,113,401,104,400,97,411,103,416,111,430,123,438,135,434,136,415,150,405,168,399,185,402,195,432,203,433,213,408,200,390,203,374,212,364,217,350,208,350,200,338,184,332,179,337,178,357,173,359,165,341,145,338" shape="poly">
+    </map>
+
+    <button id="resetButton">
+        Resetear Filtros
+    </button>
+
+</div>
+
+<!-- FOOTER -->
+    <footer class="footercoches">
+
+        <p>&copy; 2025 Initial D info web  -  Alex Romero</p>
+
+    </footer>
+
+<!-- SCRIPT JS -->
+    <script src="../js/tramos.js"></script>
+
+</body>
+
+</html>

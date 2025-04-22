@@ -1,0 +1,597 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+/* ESTILO PARA LA BARRA DE NAVEGACIÓN */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 2px #ffcc00;
+    background: #000;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+nav img{
+    width: 110px;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+
+}
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+nav ul li a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+/* ESTILO PARA LA PÁGINA PRINCIPAL */
+.central {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 64px;
+}
+.central img {
+    width: 50%;
+    max-width: 400px;
+}
+.central h1 {
+    font-size: 48px;
+    margin: 10px 0;
+}
+.central p {
+    font-size: 19px ;
+    color: #ccc;
+}
+
+
+/* ESTILO PARA LA PÁGINA INFO SOBRE LA SERIE */
+.informacion_serie {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+.informacion_serie h1 {
+    font-size: 2.5rem;
+    color: #ffcc00;
+}
+.informacion_serie p, span {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ccc;
+    text-align: justify;
+}
+.informacion_serie span {
+    display: block;
+    margin-top: 20px;
+}
+
+
+/* ESTILO PARA LA PÁGINA DE COCHES */
+.bodycoches{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+.div3 {
+    flex: 1; 
+}
+.div2 button{
+    background-color: #111; 
+    color: #ffcc00; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center;
+
+}
+.contenedor-coches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+.coche-card {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width: 240px; 
+    padding: 10px;
+    background: #111; 
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #ffcc00; 
+    text-align: center;
+}
+.coche-card img {
+    width: 200px;
+    height: 120px;
+    object-fit: contain;
+    background-color: #111;
+    padding: 10px;
+    border-radius: 8px;
+}
+.coche-card p {
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+
+/* ESTILO PARA EL MODAL DE LOS FILTROS */
+.modal-filtro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 280px;
+    background-color: #222222;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+}
+.modal-filtro.active {
+    transform: translateX(0);
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #444444;
+}
+.modal-header h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #ffcc00;
+}
+.close-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+}
+.filter-section {
+    padding: 15px;
+    border-bottom: 1px solid #444444;
+}
+.filter-section h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #ffcc00;
+}
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.filter-option {
+    display: flex;
+    align-items: center;
+}
+.filter-option input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #ffcc00;
+}
+.filter-option label {
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+}
+.filter-actions {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.filter-btn {
+    padding: 8px 15px;
+    background-color: #ffcc00;
+    color: #111111;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.filter-btn:hover {
+    background-color: #ffdd44;
+}
+.reset-btn {
+    padding: 8px 15px;
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #444444;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+.reset-btn:hover {
+    background-color: #444444;
+}
+
+
+/*ESTILO PARA EL MODAL DE LA INFO DEL COCHE*/
+.vehicle-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    overflow-y: auto;
+}
+.modal-content {
+    position: relative;
+    background-color: #141414;
+    margin: 100px auto;
+    padding: 20px;
+    width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 189, 0, 0.3);
+    color: #fff;
+    border: 1px solid #333;
+}
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close-button:hover {
+    color: #ffbd00;
+}
+.vehicle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+.vehicle-title h2 {
+    font-size: 24px;
+    color: #ffbd00;
+    margin: 0;
+}
+.vehicle-subtitle {
+    font-size: 16px;
+    color: #ccc;
+    margin-top: 5px;
+}
+.vehicle-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.vehicle-image-container {
+    text-align: center;
+}
+.main-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+.vehicle-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.specs {
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+.specs h3 {
+    color: #ffbd00;
+    margin-top: 0;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #222;
+}
+.spec-name {
+    color: #aaa;
+}
+.spec-value {
+    color: #fff;
+    font-weight: bold;
+}
+.description {
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+.description h3 {
+    color: #ffbd00;
+    margin-top: 0;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+.team-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+}
+.team-tag {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/*ESTILO PARA LA PÁGINA DE TRAMOS*/
+.contenedor-tramos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+.tramo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 240px;
+    padding: 10px;
+    background: #111; 
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #ffcc00; 
+    text-align: center;
+}
+.tramo-card img {
+    width: 200px;
+    height: 120px;
+    object-fit: contain;
+    background-color: #111;
+    padding: 10px;
+    border-radius: 8px;
+}
+.tramo-card p {
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+.tramo-card span {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+
+/*ESTILO PARA EL MODAL DE LA INFO DEL TRAMO*/
+.tramo-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    overflow-y: auto;
+    overflow: hidden;
+}
+.modal-content {
+    position: relative;
+    background-color: #141414;
+    margin: 100px auto;
+    padding: 20px;
+    width: 1300px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 189, 0, 0.3);
+    color: #fff;
+    border: 1px solid #333;
+}
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close-button:hover {
+    color: #ffbd00;
+}
+.tramo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+.tramo-title h2 {
+    font-size: 24px;
+    color: #ffbd00;
+    margin: 0;
+}
+.tramo-subtitle {
+    font-size: 16px;
+    color: #ccc;
+    margin-top: 5px;
+}
+.tramo-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.tramo-image-container {
+    text-align: center;
+}
+.main-image {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+.tramo-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.specs {
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+.specs h3 {
+    color: #ffbd00;
+    margin-top: 0;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 8px 0;
+    border-bottom: 1px solid #222;
+}
+.spec-name {
+    color: #aaa;
+}
+.spec-value {
+    color: #fff;
+    font-weight: bold;
+}
+.description {
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+.description h3 {
+    color: #ffbd00;
+    margin-top: 0;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+.team-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+}
+.prefectura-tag {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#youtubeContainer {
+    margin-top: 20px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 8px rgba(255, 189, 0, 0.1);
+}
+
+#youtubeContainer iframe {
+    width: 100%;
+    height: 315px;
+    border-radius: 5px;
+}
+
+
+
+/* ESTILO PARA EL MAPA */
+.contenedor-principal {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: center;
+}
+
+.div3-tramo {
+    width: 50%;
+    padding: 20px;
+    flex: 1; 
+}
+
+.mapa-derecha {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items:start;
+    
+}
+
+.mapa-derecha img {
+    width: 100%; 
+    max-height: 500px;
+    border-radius: 10px;
+}
+
+
+#resetButton{
+    margin-top: 20px; 
+    padding: 10px 20px; 
+    background-color: #ffcc00; 
+    color: #111; 
+    border: none; 
+    cursor: pointer; 
+    font-weight: bold;
+}
+
+
+/* ESTILO PARA EL FOOTER */
+.footerweb {
+    background: #111;
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+.footercoches{
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
